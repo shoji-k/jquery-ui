@@ -110,7 +110,7 @@
 				var matcher = new RegExp( $.ui.autocomplete.escapeRegex(request.term), "i" );
 				response( this.element.children( "option" ).map(function() {
 					var text = $( this ).text();
-					if ( this.value && ( !request.term || matcher.test(text) ) )
+					if ( !request.term || matcher.test(text) )
 						return {
 							label: text,
 							value: text,
@@ -174,7 +174,7 @@
 <div class="ui-widget">
 	<label>Your preferred programming language: </label>
 	<select id="combobox">
-		<option value="">Select one...</option>
+		<option value="">&#27;</option>
 		<option value="ActionScript">ActionScript</option>
 		<option value="AppleScript">AppleScript</option>
 		<option value="Asp">Asp</option>
